@@ -1,3 +1,4 @@
+>>>>>> an example without angularization in pp 30 of the book
 <!DOCTYPE html>
 <html ng-app='app'>
   <head>
@@ -9,14 +10,19 @@
       <form role='form'>
         <div class='form-group'>
           <div class="input-group">
+>>>>>>> ng-model hooks an input to a $scope property; if we access $scope.postBody in the controller we get data inside text field.
+>>>>>>> it is an input element with class form-control... so prompts for info...
+>>>>>>> ng-model checks for the data that comes from input AND assigns to scope with a name: ($scope.)postBody
             <input ng-model="postBody" class='form-control'>
             <span class='input-group-btn'>
+>>>>>>> ng-click a directive that usually goes with a function related to forms, buttons, etc...
               <button ng-click='addPost()' class='btn btn-default'>Add Post</button>
             </span>
           </div>
         </div>
       </form>
       <ul class='list-group'>
+>>>>>> ng-repeat is an iterator
         <li ng-repeat='post in posts' class='list-group-item'>
           <strong>@{{ post.username }}</strong>
           <span>{{ post.body }}</span>
@@ -28,6 +34,9 @@
       var app = angular.module('app', [])
       app.controller('PostsCtrl', function ($scope) {
         $scope.addPost = function () {
+>>>>>> postBody is a ng-model in the HTML above...
+>>>>>> only add a post if there is a body...
+>>>>>> in the HTML, the last entry will be the first listed
           if ($scope.postBody) {
             $scope.posts.unshift({
               username: 'dickeyxxx',
